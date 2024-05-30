@@ -142,4 +142,7 @@ output "public_ip" {
 output "s3_bucket_name" {
   value = aws_s3_bucket.backup_bucket.bucket
 }
+output "s3_backup_file_url" {
+  value = "https://s3.amazonaws.com/${aws_s3_bucket.backup_bucket.bucket}/backup-${formatdate("YYYYMMDDHHmmss", timestamp())}.tar.gz"
+}
 
